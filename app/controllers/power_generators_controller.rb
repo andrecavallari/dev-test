@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PowerGeneratorsController < ApplicationController
   def index
     @power_generators = power_generator_by_filter

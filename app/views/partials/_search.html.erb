@@ -25,7 +25,7 @@
       <div class="advanced-form" style="display:none;">
         <div class="simple-form__input">
           <%= text_field_tag :description, params[:description], placeholder: 'O que procura?' %>
-          <%= select_tag :manufacturer, manufacturers_options_for_select %>
+          <%= select_tag :manufacturer, power_generator_manufacturers_options_for_select %>
         </div>
         <div class="simple-form__btn">
           <%= button_tag 'Pesquisar', type: 'submit', class: 'btn btn-outline-primary btn-lg' %>

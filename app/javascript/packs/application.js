@@ -14,3 +14,18 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+document.addEventListener('turbolinks:load', () => {
+  Array.from(document.querySelectorAll('.freight-by-zipcode')).map(element => {
+    element.addEventListener('ajax:success', event => {
+      const [response] = event.detail
+      const responseBody = [
+        `Frete para ${response.city} - ${response.state} na rua ${response.address}`,
+        `<strong>Valor do frete:</strong> ${response.freight_cost}`,
+        `<strong>Valor total:</strong> ${response.total_cost}`,
+      ]
+      element.parentNode.querySelector('.zipcode-result').style.visibility = 'visible'
+      element.parentNode.querySelector('.zipcode-result').innerHTML = responseBody.map(item => `<div>${item}</div>`).join('')
+    })
+  })
+})

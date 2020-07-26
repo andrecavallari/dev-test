@@ -8,7 +8,6 @@ module Api
       end
 
       def show
-        return render json: params
         @power_generator = PowerGenerator.find(params[:power_generator_id])
         @freight_calc = ::FreightCalculator.cost(params[:zipcode], @power_generator.weight)
       end

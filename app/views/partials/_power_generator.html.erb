@@ -8,5 +8,8 @@
     <p>
       <strong>Descrição: </strong><%= power_generator.description %>
     </p>
+
+    <%= render partial: 'partials/freight_calculator', locals: { power_generator_id: power_generator.id } %>
   </div>
+  <div class="clearfix"></div>
 </div>

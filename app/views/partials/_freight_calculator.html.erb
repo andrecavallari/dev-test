@@ -1,0 +1,9 @@
+<div class='power_generator-freight_calculator'>
+  <%= form_tag api_v1_freight_calculator_path, remote: true, class: 'freight-by-zipcode', data: { type: :json } do %>
+    <%= hidden_field_tag :power_generator_id, power_generator_id %>
+    <%= number_field_tag :zipcode, nil, placeholder: 'CEP (somente números)' %>
+    <%= button_tag 'Calcular o frete', type: :submit, data: { id: power_generator_id } %>
+  <% end %>
+
+  <div class="zipcode-result"></div>
+</div>

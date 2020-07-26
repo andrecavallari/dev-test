@@ -2,12 +2,12 @@
 
 class PowerGeneratorsController < ApplicationController
   def index
-    @power_generators = power_generator_by_filter
+    @power_generators = power_generators_by_filter
   end
 
   private
 
-  def power_generator_by_filter
+  def power_generators_by_filter
     power_generators = PowerGenerator
 
     if params[:manufacturer].present?

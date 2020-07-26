@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 json.zipcode @freight_calc.zipcode
-json.addres @freight_calc.addres
+json.address @freight_calc.address
 json.complement @freight_calc.complement
 json.city @freight_calc.city
 json.state @freight_calc.state

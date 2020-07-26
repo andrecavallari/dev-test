@@ -33,7 +33,7 @@ class FreightCalculator
     end
 
     def cost_response(zipcode_info, freight_data, weight)
-      OpenStruct.new({ zipcode: zipcode_info['cep'], addres: zipcode_info['logradouro'],
+      OpenStruct.new({ zipcode: zipcode_info['cep'], address: zipcode_info['logradouro'],
         complement: zipcode_info['complemento'], city: zipcode_info['localidade'], state: zipcode_info['uf'], 
         weight: weight, freight_cost: freight_data['cost'] })
     end

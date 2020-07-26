@@ -1,10 +1,12 @@
 br:
-  metalico: Metálico
-  ceramico: Cerâmico
-  fibrocimento: Fibrocimento
-  laje: Laje
-  solo: Solo
-  trapezoidal: Trapezoidal
+  enum:
+    structure_type:
+      metalico: Metálico
+      ceramico: Cerâmico
+      fibrocimento: Fibrocimento
+      laje: Laje
+      solo: Solo
+      trapezoidal: Trapezoidal
   number:
     currency:
       format:

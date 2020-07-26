@@ -87,18 +87,17 @@ p.power_generator-card__price {
 .searcher__radio {
   display: flex;
   justify-content: space-between;
-  width: 340px;
+  width: 360px;
   margin-left: 20px;
 }
 
 .simple-form {
-  margin-top: 20px;
+  margin-top: 22px;
   margin-bottom: 20px;
-  display: flex;
+  margin-left: 100px;
 }
 
 .simple-form__input {
-  width: 200px;
   margin-left: 100px;
 }
 
@@ -145,16 +144,28 @@ p.power_generator-card__price {
   margin-top: 15px;
 }
 
-.power_generator-freight_calculator .zipcode-result {
-  margin-top: 15px;
-  padding: 10px;
-  border: 1px solid #CCC;
-  border-radius: 5px;
-  visibility: hidden;
+.power_generator-freight_calculator {
+  .zipcode-result {
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    visibility: hidden;
+  }
 }
 
 .paginator {
   text-align: center;
   padding: 35px 0;
   clear: both;
+}
+
+.searcher {
+  select {
+    padding: 2px;
+  }
+
+  button {
+    padding: 3px;
+  }
 }

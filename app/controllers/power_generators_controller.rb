@@ -8,7 +8,7 @@ class PowerGeneratorsController < ApplicationController
   private
 
   def power_generator_by_filter
-    power_generators = PowerGenerator.order(price: :asc, name: :asc)
+    power_generators = PowerGenerator
 
     if params[:manufacturer].present?
       power_generators = power_generators.where(manufacturer: params[:manufacturer])
@@ -23,6 +23,12 @@ class PowerGeneratorsController < ApplicationController
       power_generators = power_generators.where(structure_type: params[:structure])
     end
 
-    power_generators.order(price: :asc, name: :asc).page(params[:page]).per(6)
+    if params[:order_by].present?
+      power_generators = power_generators.order(Hash[params[:order_by], :asc])
+    else
+      power_generators = power_generators.order(name: :asc, price: :asc)
+    end
+
+    power_generators.page(params[:page]).per(6)
   end
 end

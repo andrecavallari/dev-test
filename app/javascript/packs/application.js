@@ -20,7 +20,7 @@ document.addEventListener('turbolinks:load', () => {
     element.addEventListener('ajax:success', event => {
       const [response] = event.detail
       const responseBody = [
-        `Frete para ${response.city} - ${response.state} na rua ${response.address}`,
+        `Frete para <strong>${response.city} - ${response.state}</strong> na rua ${response.address}`,
         `<strong>Valor do frete:</strong> ${response.freight_cost}`,
         `<strong>Valor total:</strong> ${response.total_cost}`,
       ]

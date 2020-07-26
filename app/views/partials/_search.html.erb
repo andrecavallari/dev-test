@@ -13,10 +13,8 @@
     <%= form_tag nil, method: :get do %>
     <%= hidden_field_tag :searchType, :simple %>
       <div class="simple-form">
-        <div class="simple-form__input">
+        <div class="fields">
           <%= text_field_tag :description, params[:description], placeholder: 'O que procura?' %>
-        </div>
-        <div class="simple-form__btn">
           <%= button_tag 'Pesquisar', type: 'submit', class: 'btn btn-outline-primary btn-lg' %>
         </div>
       </div>
@@ -25,12 +23,11 @@
     <%= form_tag nil, method: :get do %>
     <%= hidden_field_tag :searchType, :advanced %>
       <div class="advanced-form" style="display:none;">
-        <div class="simple-form__input">
+        <div class="fields">
           <%= text_field_tag :description, params[:description], placeholder: 'O que procura?' %>
-          <%= select_tag :manufacturer, power_generator_manufacturers_options_for_select(params[:manufacturer]), empty: 'Filtrar por fabricante' %>
-          <%= select_tag :structure, enum_options_translated(PowerGenerator, :structure_types, params[:structure]), empty: 'Filtrar por tipo de estrutura' %>
-        </div>
-        <div class="simple-form__btn">
+          <%= select_tag :manufacturer, power_generator_manufacturers_options_for_select(params[:manufacturer]), include_blank: 'Fabricante' %>
+          <%= select_tag :structure, enum_options_translated(PowerGenerator, :structure_types, params[:structure]), include_blank: 'Tipo de estrutura' %>
+          <%= select_tag :order_by, power_generator_sort_collection, include_blank: 'Ordenar por:' %>
           <%= button_tag 'Pesquisar', type: 'submit', class: 'btn btn-outline-primary btn-lg' %>
         </div>
       </div>

@@ -1,4 +1,17 @@
 br:
+  activerecord:
+    attributes:
+      power_generator:
+        name: Nome
+        price: Preço
+        kwp: kwp
+        manufacturer: Fabricante
+        description: Descrição
+        structure_type: Tipo de estrutura
+        width: Largura
+        height: Altura
+        weight: Peso
+        length: Comprimento
   enum:
     structure_type:
       metalico: Metálico

@@ -142,3 +142,8 @@ p.power_generator-card__price {
   color: #e96443;
 }
 
+.paginator {
+  text-align: center;
+  padding: 35px 0;
+  clear: both;
+}

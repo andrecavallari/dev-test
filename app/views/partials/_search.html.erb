@@ -1,0 +1,32 @@
+<div class="searcher gradient">
+    <div class="searcher__radio">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="searchRadio" id="simpleSearch" value="simple" checked>
+        <label class="form-check-label" for="simpleSearch">Pesquisa simples</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="searchRadio" id="advancedSearch" value="advanced">
+        <label class="form-check-label" for="advancedSearch">Pesquisa Avançada</label>
+      </div>
+    </div>
+
+    <%= form_tag nil, method: :get do %>
+      <div class="simple-form">
+        <div class="simple-form__input">
+          <%= text_field_tag :description, params[:description], placeholder: 'O que procura?' %>
+        </div>
+        <div class="simple-form__btn">
+          <%= button_tag 'Pesquisar', type: 'submit', class: 'btn btn-outline-primary btn-lg' %>
+        </div>
+      </div>
+
+      <div class="advanced-form" style="display:none;">
+        <div class="simple-form__input">
+          <%= text_field_tag :description, params[:description], placeholder: 'O que procura?' %>
+        </div>
+        <div class="simple-form__btn">
+          <%= button_tag 'Pesquisar', type: 'submit', class: 'btn btn-outline-primary btn-lg' %>
+        </div>
+      </div>
+    <% end %>
+  </div>

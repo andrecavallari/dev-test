@@ -17,6 +17,10 @@ class PowerGeneratorsController < ApplicationController
       power_generators = power_generators.where('description like ?', "%#{description_query}%")
     end
 
+    if params[:structure].present?
+      power_generators = power_generators.where(structure_type: params[:structure])
+    end
+
     power_generators.order(price: :asc, name: :asc).page(params[:page]).per(6)
   end
 end

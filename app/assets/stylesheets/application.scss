@@ -142,15 +142,22 @@ p.power_generator-card__price {
 
 .power_generator-freight_calculator {
   margin-top: 15px;
-}
 
-.power_generator-freight_calculator {
   .zipcode-result {
     margin-top: 15px;
     padding: 10px;
     border: 1px solid #CCC;
     border-radius: 5px;
     visibility: hidden;
+    font-size: 0.8rem;
+  }
+
+  .zipcode {
+    width: 160px;
+  }
+
+  .submit-btn {
+    padding: 3px;
   }
 }
 
@@ -168,4 +175,14 @@ p.power_generator-card__price {
   button {
     padding: 3px;
   }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
 }

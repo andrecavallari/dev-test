@@ -1,0 +1,46 @@
+br:
+  activerecord:
+    attributes:
+      power_generator:
+        name: Nome
+        price: Preço
+        kwp: kwp
+        manufacturer: Fabricante
+        description: Descrição
+        structure_type: Tipo de estrutura
+        width: Largura
+        height: Altura
+        weight: Peso
+        length: Comprimento
+  enum:
+    structure_type:
+      metalico: Metálico
+      ceramico: Cerâmico
+      fibrocimento: Fibrocimento
+      laje: Laje
+      solo: Solo
+      trapezoidal: Trapezoidal
+  number:
+    currency:
+      format:
+        unit: 'R$'
+        delimiter: '.'
+        separator: ','
+        precision: 2
+        format: '%u %n'
+  views:
+    pagination:
+      first: "&laquo; Primeira"
+      last: "Última &raquo;"
+      previous: "&lsaquo; Anterior"
+      next: "Próxima &rsaquo;"
+      truncate: "&hellip;"
+  helpers:
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: "No %{entry_name} found"
+          one: "Displaying <b>1</b> %{entry_name}"
+          other: "Displaying <b>all %{count}</b> %{entry_name}"
+      more_pages:
+        display_entries: "Displaying %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> of <b>%{total}</b> in total"

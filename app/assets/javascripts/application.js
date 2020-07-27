@@ -26,6 +26,26 @@ function ready(event) {
       $('.advanced-form').show();
     }
   });
+
+  if($('input[type=radio][name=searchRadio]:checked')) {
+    switch($('input[type=radio][name=searchRadio]:checked').val()) {
+      case 'simple': {
+        $('.simple-form').show();
+        $('.advanced-form').hide();
+        break;
+      }
+      case 'advanced': {
+        $('.simple-form').hide();
+        $('.advanced-form').show();
+        break;
+      }
+      default: {
+        $('.simple-form').show();
+        $('.advanced-form').hide();
+        break;
+      }
+    }
+  }
 }
 
 $(document).on('turbolinks:load', ready);

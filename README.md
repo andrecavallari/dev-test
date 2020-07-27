@@ -34,7 +34,7 @@ Este projeto utiliza:
 O banco de dados já está com o schema "pré pronto" e algumas informações necessárias o projeto.
 Execute os comandos abaixo:
 
-`$ bundle exec rails db:create db:migrate db:seed`
+`$ bundle exec rails db:setup`
 
 
 #### Objetivo geral

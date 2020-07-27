@@ -11,12 +11,18 @@ gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
-gem 'rails-assets-jquery'
 gem 'uglifier', '>= 1.3.0'
 gem "roo", "~> 2.8.0"
+gem 'httparty'
+gem 'kaminari'
+
+source "https://rails-assets.org" do
+  gem "rails-assets-jquery"
+end
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -25,6 +31,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry', '~> 0.12.2'
+  gem 'pry-rails'
 end
 
 group :test do

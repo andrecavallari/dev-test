@@ -1,0 +1,35 @@
+<div class="searcher gradient">
+    <div class="searcher__radio">
+      <div class="form-check">
+        <%= radio_button_tag(:searchRadio, :simple, (params.dig(:searchType) == 'simple' || params[:searchType].nil?), id: 'simpleSearch') %>
+        <label class="form-check-label" for="simpleSearch">Pesquisa simples</label>
+      </div>
+      <div class="form-check">
+        <%= radio_button_tag(:searchRadio, :advanced, params.dig(:searchType) == 'advanced', id: 'advancedSearch') %>
+        <label class="form-check-label" for="advancedSearch">Pesquisa Avançada</label>
+      </div>
+    </div>
+
+    <%= form_tag nil, method: :get do %>
+    <%= hidden_field_tag :searchType, :simple %>
+      <div class="simple-form">
+        <div class="fields">
+          <%= text_field_tag :description, params[:description], placeholder: 'O que procura?' %>
+          <%= button_tag 'Pesquisar', type: 'submit', class: 'btn btn-outline-primary btn-lg' %>
+        </div>
+      </div>
+    <% end %>
+
+    <%= form_tag nil, method: :get do %>
+    <%= hidden_field_tag :searchType, :advanced %>
+      <div class="advanced-form" style="display:none;">
+        <div class="fields">
+          <%= text_field_tag :description, params[:description], placeholder: 'O que procura?' %>
+          <%= select_tag :manufacturer, power_generator_manufacturers_options_for_select(params[:manufacturer]), include_blank: 'Fabricante' %>
+          <%= select_tag :structure, enum_options_translated(PowerGenerator, :structure_types, params[:structure]), include_blank: 'Tipo de estrutura' %>
+          <%= select_tag :order_by, power_generator_sort_collection, include_blank: 'Ordenar por:' %>
+          <%= button_tag 'Pesquisar', type: 'submit', class: 'btn btn-outline-primary btn-lg' %>
+        </div>
+      </div>
+    <% end %>
+  </div>

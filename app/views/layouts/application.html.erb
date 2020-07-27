@@ -6,9 +6,18 @@
     <%= favicon_link_tag 'favicon.png' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application' %>
+    <%= javascript_pack_tag 'application', defer: true %>
   </head>
   <body>
-    <%= yield %>
+    <div>
+
+      <div class="header">
+        <div class="logo"><%= image_tag 'ps_logo.png' %></div>
+        <div class="header__title">Geradores de Energia</div>
+      </div>
+
+      <%= yield %>
+      
+    </div>
   </body>
 </html>
